@@ -5,7 +5,7 @@
     "ios.debug": {
       "type": "ios.app",
       "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/poc_e2e.app",
-      "build": "xcodebuild -project ios/poc_e2e.xcodeproj -UseNewBuildSystem=NO -scheme poc_e2e -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build"
+      "build": "xcodebuild -workspace ios/poc_e2e.xcworkspace -scheme poc_e2e -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build"
     }
   },
   "devices": {
