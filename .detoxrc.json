@@ -1,12 +1,29 @@
 {
   "testRunner": "jest",
   "runnerConfig": "e2e/config.json",
+  "apps": {
+    "ios.debug": {
+      "type": "ios.app",
+      "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/poc_e2e.app",
+      "build": "xcodebuild -project ios/poc_e2e.xcodeproj -UseNewBuildSystem=NO -scheme poc_e2e -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build"
+    }
+  },
+  "devices": {
+    "simulator": {
+      "type": "ios.simulator",
+      "device": "iPhone 13"
+    }
+  },
   "configurations": {
     "android.emu.debug": {
       "type": "android.attached",
       "name": "192.168.58.102:5555",
       "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
       "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug && cd .."
+    },
+    "ios.sim.debug": {
+      "app": "ios.debug",
+      "device": "simulator"
     }
   }
 }

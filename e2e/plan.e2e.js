@@ -17,7 +17,7 @@ describe('My first suite tests E2E', () => {
     await element(by.id('keyboard')).tap();
     await element(by.id('button-subscribe')).tap();
 
-    await device.takeScreenshot('snapshot-premium-plan-test');
+    // await device.takeScreenshot('snapshot-premium-plan-test');
     await expect(element(by.id('confirmation-message'))).toBeVisible();
   });
 });
