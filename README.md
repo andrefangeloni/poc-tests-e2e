@@ -1,7 +1,7 @@
 # Detox Setup
 Reference: [Detox](https://github.com/wix/Detox)
 
-## Requisitos
+## Requirements
 
 `yarn add -D detox`
 <br />
@@ -43,13 +43,13 @@ dependencies {
 }
 ```
 
-## Setup de Teste
+## Test Setup
 
-Criar o arquivo DetoxTest.java no seguinte diretório:
+Create the DetoxTest.java file in the following directory:
 `android/app/src/androidTest/java/com/<package_name>/DetoxTest.java`
 
 ```java
-package com.<package_name>; // Trocar pelo no do Projeto.
+package com.<package_name>; // Change package name
 
 import com.wix.detox.Detox;
 import com.wix.detox.config.DetoxConfig;
@@ -73,7 +73,7 @@ public class DetoxTest {
         DetoxConfig detoxConfig = new DetoxConfig();
         detoxConfig.idlePolicyConfig.masterTimeoutSec = 90;
         detoxConfig.idlePolicyConfig.idleResourceTimeoutSec = 60;
-        detoxConfig.rnContextLoadTimeoutSec = (com.<package_name>.BuildConfig.DEBUG ? 180 : 60);
+        detoxConfig.rnContextLoadTimeoutSec = (com.<package_name>.BuildConfig.DEBUG ? 180 : 60); // Change package name
 
         Detox.runTests(mActivityRule, detoxConfig);
     }
@@ -86,11 +86,11 @@ brew tap wix/brew
 brew install applesimutils
 ```
 
-## Iniciando o Detox
+## Starting Detox
 
 `yarn detox init -r jest`
 
-## Configuração do arquivo .detoxrc.json
+## Setup .detoxrc.json
 
 ```json
 {
@@ -124,7 +124,7 @@ brew install applesimutils
 }
 ```
 
-## Gerando a build para teste
+## Generate build for testing
 
 ```
 Android:
@@ -134,7 +134,7 @@ iOS:
 yarn detox build -c ios.sim.debug
 ```
 
-## Executando testes com Detox
+## Testing with Detox
 
 ```
 Android:
